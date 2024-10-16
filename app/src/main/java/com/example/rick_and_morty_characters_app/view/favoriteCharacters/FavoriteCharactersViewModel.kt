@@ -1,4 +1,4 @@
-package com.example.rick_and_morty_characters_app.view.FavoriteCharacters
+package com.example.rick_and_morty_characters_app.view.favoriteCharacters
 
 import androidx.lifecycle.ViewModel
 

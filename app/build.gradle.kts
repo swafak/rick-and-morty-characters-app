@@ -1,9 +1,18 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+//    alias(libs.plugins.android.application)
+//    alias(libs.plugins.jetbrains.kotlin.android)
+//    id("kotlin-kapt")
+    id("com.android.application")
+    id("kotlin-android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
+    kapt {
+        correctErrorTypes = true
+    }
+
     namespace = "com.example.rick_and_morty_characters_app"
     compileSdk = 34
 
@@ -27,11 +36,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
@@ -40,8 +49,6 @@ android {
 }
 
 dependencies {
-    //hilt
-    implementation("com.google.dagger:hilt-android:2.44")
 
     // Retrofit dependencies
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
@@ -51,8 +58,28 @@ dependencies {
     implementation("com.facebook.shimmer:shimmer:0.5.0")
 
 
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.0")
+    //Glide
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    kapt ("com.github.bumptech.glide:compiler:4.12.0")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+
+    //hilt
+    implementation("com.google.dagger:hilt-android:2.44")
+     kapt("com.google.dagger:hilt-android-compiler:2.44")
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
+
+     // Retrofit dependencies
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+    // Network Response dependency
+    implementation("com.github.haroldadmin:NetworkResponseAdapter:4.0.1")
+
+
+
+
 
 
     implementation(libs.androidx.core.ktx)

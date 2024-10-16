@@ -6,12 +6,15 @@
         app:startDestination="@id/navigation_home">
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.rick_and_morty_characters_app.view.CharactersList.CharactersListFragment"
+        android:name="com.example.rick_and_morty_characters_app.view.charactersList.CharactersListFragment"
         android:label="@string/Home"
-        tools:layout="@layout/fragment_characters_list" />
+        tools:layout="@layout/fragment_characters_list"/>
+    <action
+        android:id="@+id/action_characterList_to_characterDetail"
+        app:destination="@id/navigation_Favorite" />
     <fragment
         android:id="@+id/navigation_Favorite"
-        android:name="com.example.rick_and_morty_characters_app.view.FavoriteCharacters.FavoriteCharactersFragment"
+        android:name="com.example.rick_and_morty_characters_app.view.favoriteCharacters.FavoriteCharactersFragment"
         android:label="@string/Favorite"
         tools:layout="@layout/fragment_favorite_characters" />
 
