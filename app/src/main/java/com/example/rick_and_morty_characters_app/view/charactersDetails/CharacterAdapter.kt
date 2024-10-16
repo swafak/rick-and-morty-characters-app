@@ -10,8 +10,7 @@ import com.example.rick_and_morty_characters_app.databinding.CharactersListRecVi
 import com.example.rick_and_morty_characters_app.model.dataSource.network.CharacterResult
 
 class CharacterAdapter(
-    private val onItemClick: (CharacterResult) -> Unit,
-    private val showDetails: (CharacterResult) -> Unit
+      private val showDetails: (CharacterResult) -> Unit
 ) : ListAdapter<CharacterResult, CharacterAdapter.CharacterViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
@@ -40,7 +39,7 @@ class CharacterAdapter(
                     .into(ImageLogo)
 
                 root.setOnClickListener {
-                    onItemClick(castcharacter)
+                    showDetails(castcharacter)
                 }
             }
         }

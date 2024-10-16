@@ -26,7 +26,7 @@ class CharactersListViewModel @Inject constructor(
         fetchCharacters()
     }
 
-    private fun fetchCharacters() {
+    fun fetchCharacters() {
         viewModelScope.launch {
             _viewState.postValue(CharacterListViewState.Loading)
             try {
