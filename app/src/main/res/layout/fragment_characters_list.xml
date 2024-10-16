@@ -9,10 +9,22 @@
         type="com.example.rick_and_morty_characters_app.view.charactersList.CharactersListViewModel" />
 </data>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <FrameLayout
+            android:id="@+id/frameOne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/HomePage">
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmerFrameLayout"
@@ -69,6 +81,7 @@
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/characterRecyclerView"
             android:layout_width="0dp"
@@ -78,6 +91,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:listitem="@layout/all_characters_shimmer" />
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

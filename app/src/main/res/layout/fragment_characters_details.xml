@@ -56,7 +56,7 @@
 
                 <TextView
                     style="@style/TextAppearance.AppCompat.Title"
-                    android:id="@+id/Title"
+                    android:id="@+id/Name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -90,7 +90,7 @@
                 android:id="@+id/Status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="8dp">
                 <TextView
                     style="@style/TextAppearance.AppCompat.Title"
@@ -102,7 +102,7 @@
 
                 <TextView
                     android:id="@+id/Status2"
-                    style="@style/TextAppearance.AppCompat.Title"
+                    style="@style/TextAppearance.AppCompat.Small"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Status"
@@ -113,7 +113,7 @@
                 android:id="@+id/Species"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_below="@+id/Status"
                 android:padding="8dp">
 
@@ -127,7 +127,7 @@
 
                 <TextView
                     android:id="@+id/Species2"
-                    style="@style/TextAppearance.AppCompat.Title"
+                    style="@style/TextAppearance.AppCompat.Small"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Species"
@@ -140,7 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/Species"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="8dp">
 
                 <TextView
@@ -153,7 +153,7 @@
 
                 <TextView
                     android:id="@+id/Gender2"
-                    style="@style/TextAppearance.AppCompat.Title"
+                    style="@style/TextAppearance.AppCompat.Small"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Gender"
@@ -166,7 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/Gender"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="8dp">
 
                 <TextView
@@ -179,7 +179,7 @@
 
                 <TextView
                     android:id="@+id/Location2"
-                    style="@style/TextAppearance.AppCompat.Title"
+                    style="@style/TextAppearance.AppCompat.Small"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Location"
