@@ -6,4 +6,6 @@
     <string name="Gender">Gender</string>
     <string name="Location">Location</string>
     <string name="Image">Image</string>
+    <string name="Home">Home</string>
+    <string name="Favorite">Favorite</string>
 </resources>
