@@ -5,9 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".view.FavoriteCharacters.FavoriteCharactersFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+  <androidx.recyclerview.widget.RecyclerView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      tools:listitem="@layout/fragment_favorite_characters"
+      android:id="@+id/fav_recycler_view"
+
+      />
 
 </FrameLayout>

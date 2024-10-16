@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">rick-and-morty-characters-app</string>
+    <string name="Name">Name</string>
+    <string name="Status">Status</string>
+    <string name="Species">Species</string>
+    <string name="Gender">Gender</string>
+    <string name="Location">Location</string>
+    <string name="Image">Image</string>
 </resources>
