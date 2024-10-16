@@ -34,9 +34,9 @@ class CharactersListFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
+        binding.frameOne.visibility = View.GONE
+
         setupRecyclerView()
-
-
 
 
         return binding.root
