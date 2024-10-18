@@ -6,7 +6,7 @@
     <data>
     <variable
         name="viewModel"
-        type="com.example.rick_and_morty_characters_app.view.charactersList.CharactersListViewModel" />
+        type="com.example.rick_and_morty_characters_app.viewModel.CharactersListViewModel" />
 </data>
 
 

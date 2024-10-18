@@ -1,6 +1,7 @@
 package com.example.rick_and_morty_characters_app.di
 
 import com.example.rick_and_morty_characters_app.model.dataSource.network.apiService
+import com.example.rick_and_morty_characters_app.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +18,7 @@ object NetworkModule {
     @Singleton
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://rickandmortyapi.com/api/")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

@@ -1,4 +1,4 @@
-package com.example.rick_and_morty_characters_app.view.charactersList
+package com.example.rick_and_morty_characters_app.viewModel
 
 
 import androidx.lifecycle.LiveData
@@ -8,7 +8,9 @@ import androidx.lifecycle.viewModelScope
 import com.example.rick_and_morty_characters_app.model.dataSource.network.CharacterResult
 import com.example.rick_and_morty_characters_app.model.repository.RickAndMortyRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -26,18 +28,28 @@ class CharactersListViewModel @Inject constructor(
         fetchCharacters()
     }
 
-    fun fetchCharacters() {
-        viewModelScope.launch {
-            _viewState.postValue(CharacterListViewState.Loading)
-            try {
-                val characterList = repository.getCharacters()
-                _characters.postValue(characterList!!)
-                _viewState.postValue(CharacterListViewState.Success)
+
+fun fetchCharacters() {
+    viewModelScope.launch(Dispatchers.IO) {
+        _viewState.postValue(CharacterListViewState.Loading)
+        try {
+            val characterList = repository.getCharacters()
+            withContext(Dispatchers.Main) {
+                // Handle null safely using 'let'
+                characterList?.let {
+                    _characters.postValue(it)
+                    _viewState.postValue(CharacterListViewState.Success)
+                } ?: run {
+                    _viewState.postValue(CharacterListViewState.Error(NullPointerException("Character list is null")))
+                }
+            }
             } catch (e: Exception) {
                 _viewState.postValue(CharacterListViewState.Error(e))
             }
         }
-    }
+
+}
+
 }
 
 sealed class CharacterListViewState {

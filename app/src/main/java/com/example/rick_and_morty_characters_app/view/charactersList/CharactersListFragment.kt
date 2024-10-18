@@ -13,8 +13,12 @@ import com.example.rick_and_morty_characters_app.databinding.FragmentCharactersL
 import com.example.rick_and_morty_characters_app.model.dataSource.network.CharacterResult
 import com.example.rick_and_morty_characters_app.view.charactersDetails.CharacterAdapter
 import com.example.rick_and_morty_characters_app.view.charactersDetails.CharactersDetailsFragment
+import com.example.rick_and_morty_characters_app.viewModel.CharacterListViewState
+import com.example.rick_and_morty_characters_app.viewModel.CharactersListViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class CharactersListFragment : Fragment() {
 
@@ -98,13 +102,11 @@ class CharactersListFragment : Fragment() {
             }
         }
     }
-
         private fun showShimmerEffect() {
             binding.shimmerFrameLayout.startShimmer()
             binding.shimmerFrameLayout.visibility = View.VISIBLE
             binding.characterRecyclerView.visibility = View.GONE
         }
-
         private fun hideShimmerEffect() {
             binding.shimmerFrameLayout.stopShimmer()
             binding.shimmerFrameLayout.visibility = View.GONE
