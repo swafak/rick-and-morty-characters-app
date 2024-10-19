@@ -4,9 +4,9 @@ This is a simple android application that fetches and displays characters from t
 
 ## screenshots
 
-![Characters List](./screenshots/characters_list_screen.png)
-![Character's Details](./screenshots/details_screen.png)
-![favovite_screen](./screenshots/favorite_screen.png)
+![Characters List](./screenshots/characters_list_screen.jpg)
+![Character's Details](./screenshots/details_screen.jpg)
+![favorite screen](./screenshots/favorite_screen.jpg)
 
 
 
