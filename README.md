@@ -2,7 +2,6 @@
 
 This is a simple android application that fetches and displays characters from the popular TV show "Rick and Morty" using the [Rick and Morty API](https://rickandmortyapi.com/).
 
-## screenshots
 ## Screenshots
 
 <p align="center">
