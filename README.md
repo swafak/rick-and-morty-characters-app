@@ -3,9 +3,13 @@
 This is a simple android application that fetches and displays characters from the popular TV show "Rick and Morty" using the [Rick and Morty API](https://rickandmortyapi.com/).
 
 ## screenshots
+## Screenshots
 
--|-|-
-![Characters List](./screenshots/characters_list_screen.jpg)|![Character's Details](./screenshots/details_screen.jpg)|![favorite screen](./screenshots/favorite_screen.jpg)
+<p align="center">
+  <img src="./screenshots/characters_list_screen.jpg" alt="Character List" width="30%" />
+  <img src="./screenshots/details_screen.jpg" alt="Character Details" width="30%" />
+  <img src="./screenshots/favorite_screen.jpg" alt="Favorite Screen" width="30%" />
+</p>
 
 
 
