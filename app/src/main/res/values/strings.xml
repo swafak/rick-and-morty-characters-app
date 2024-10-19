@@ -6,6 +6,8 @@
     <string name="Gender">Gender</string>
     <string name="Location">Last known location</string>
     <string name="Image">Image</string>
+    <string name="Home">Home</string>
     <string name="Character_list">Characters list</string>
-    <string name="Favorite">Favorite characters</string>
+    <string name="Favorite">Favorite</string>
+    <string name="Favorite_character">Favorite Characters</string>
 </resources>
