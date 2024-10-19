@@ -29,29 +29,22 @@ class CharactersDetailsFragment : Fragment() {
 
 
     private val Details = "details"
-    private var details: CharacterResult? = null
+       private var details: CharacterResult? = null
     private lateinit var binding: FragmentCharactersDetailsBinding
 
     private lateinit var favViewModel: CharacterDBViewModell
 
-
-    private var selectedItem: CharacterResult? = null
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
 
-            details = it.getSerializable(Details) as CharacterResult
-
-
-        }
         //DB initialization
         val database = CharacterDB.getDatabase(requireContext())
         val repository = CharacterDBRepository(database.CharacterDao())
         val factory = CharacterViewModelFactory(repository)
 
         favViewModel = ViewModelProvider(this, factory).get(CharacterDBViewModell::class.java)
+
+        details = arguments?.getSerializable(Details) as CharacterResult?
     }
 
     override fun onCreateView(
@@ -63,29 +56,32 @@ class CharactersDetailsFragment : Fragment() {
             val intent = Intent(requireContext(), MainActivity::class.java)
             requireContext().startActivity(intent)
         }
-        binding.apply {
+        details?.let { characterDetails ->
+            binding.apply {
 
-            Name.text = details!!.name
-            Status2.text = details!!.status
-            Species2.text = details!!.species
-            Gender2.text = details!!.gender
-            Location2.text = details!!.location.name
-            Glide.with(Image.context)
-                .load(details!!.image)
-                .into(Image)
+                Name.text = details!!.name
+                Status2.text = details!!.status
+                Species2.text = details!!.species
+                Gender2.text = details!!.gender
+                Location2.text = details!!.location.name
+                Glide.with(Image.context)
+                    .load(details!!.image)
+                    .into(Image)
 
-        }
-
-
-        binding.FavButton.setOnClickListener{
-
-            selectedItem?.let {
-                selectedItem?.let { item ->
-                    toggleFavorite(item)
-                }
             }
+            favViewModel.isFavorite(details!!.id).observe(viewLifecycleOwner, Observer { isFavorite ->
+                updateFavoriteIcon(isFavorite)
+            })
 
         }
+
+
+        // FavButton click listener
+        binding.FavButton.setOnClickListener {
+            details?.let { character ->
+                toggleFavorite(character)
+            } ?: Toast.makeText(context, "Error: No character selected", Toast.LENGTH_SHORT).show()
+    }
         return binding.root
     }
 
@@ -98,7 +94,7 @@ class CharactersDetailsFragment : Fragment() {
             image = item.image,
             species = item.species,
             created = item.created,
-                      url = item.url,
+            url = item.url,
             type = item.type
 
         )

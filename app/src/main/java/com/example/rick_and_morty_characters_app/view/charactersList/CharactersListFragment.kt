@@ -36,7 +36,7 @@ class CharactersListFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        binding.frameOne.visibility = View.GONE
+        binding.detailFrame.visibility = View.GONE
 
         setupRecyclerView()
 
@@ -62,9 +62,9 @@ class CharactersListFragment : Fragment() {
     private fun showDetails(item: CharacterResult) {
         Toast.makeText(context, "Show details", Toast.LENGTH_SHORT).show()
         val fragment = CharactersDetailsFragment.newInstance(item)
-        binding.frameOne.visibility = View.VISIBLE
+        binding.detailFrame.visibility = View.VISIBLE
         binding.HomePage.visibility = View.GONE
-        val tras = childFragmentManager.beginTransaction().replace(binding.frameOne.id, fragment)
+        val tras = childFragmentManager.beginTransaction().replace(binding.detailFrame.id, fragment)
         tras.commit()
     }
 

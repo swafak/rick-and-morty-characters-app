@@ -10,22 +10,30 @@
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        >
+         <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:id="@+id/cardView"
+        app:cardCornerRadius="10dp"
 
+        app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" >
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:scaleType="centerCrop"
-            android:padding="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitXY"
             tools:src="@tools:sample/avatars"
             android:id="@+id/ImageLogo" />
+    </androidx.cardview.widget.CardView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/ImageLogo"
+            app:layout_constraintStart_toEndOf="@id/cardView"
+            android:padding="8dp"
             app:layout_constraintTop_toTopOf="parent"
             android:textStyle="bold"
             android:text="@string/Name"
@@ -35,7 +43,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/CharStatus"
-            app:layout_constraintStart_toEndOf="@id/ImageLogo"
+            android:padding="8dp"
+            app:layout_constraintStart_toEndOf="@id/cardView"
             app:layout_constraintTop_toBottomOf="@id/Name"
             android:text="@string/Status"
             android:textStyle="bold" />

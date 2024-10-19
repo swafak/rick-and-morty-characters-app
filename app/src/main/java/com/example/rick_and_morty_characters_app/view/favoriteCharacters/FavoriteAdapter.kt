@@ -10,7 +10,7 @@ import com.example.rick_and_morty_characters_app.databinding.FavCharacterRecView
 import com.example.rick_and_morty_characters_app.model.dataSource.room.CharacterEntity
 
 class FavoriteAdapter : ListAdapter<CharacterEntity, FavoriteAdapter.CharacterViewHolder>(
-    MovieDiffCallback()
+    DiffCallback()
 ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):CharacterViewHolder {
@@ -19,7 +19,11 @@ class FavoriteAdapter : ListAdapter<CharacterEntity, FavoriteAdapter.CharacterVi
     }
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        val item = getItem(position)
+        holder.bind(item)
+//        holder.binding.posterImageView.setOnClickListener {
+//            showDetails(item)
+//        }
     }
 
     class CharacterViewHolder(private val binding: FavCharacterRecViewBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -32,11 +36,13 @@ class FavoriteAdapter : ListAdapter<CharacterEntity, FavoriteAdapter.CharacterVi
                 .load(item.image)
                 .into(binding.posterImageView)
 
+                     }
+
 //            binding.executePendingBindings()
         }
     }
 
-    class MovieDiffCallback : DiffUtil.ItemCallback<CharacterEntity>() {
+    class DiffCallback : DiffUtil.ItemCallback<CharacterEntity>() {
         override fun areItemsTheSame(oldItem: CharacterEntity, newItem: CharacterEntity): Boolean {
             return oldItem.id == newItem.id
         }
@@ -45,4 +51,3 @@ class FavoriteAdapter : ListAdapter<CharacterEntity, FavoriteAdapter.CharacterVi
             return oldItem == newItem
         }
     }
-}
