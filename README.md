@@ -4,9 +4,11 @@ This is a simple android application that fetches and displays characters from t
 
 ## screenshots
 
-![Characters List][screenshots/characters_list_screen.png]
-![Character's Details][screenshots/details_screen.png]
-![favovite_screen][screenshots/favorite_screen.png]
+![Characters List][./screenshots/characters_list_screen.png]
+![Character's Details][./screenshots/details_screen.png]
+![favovite_screen][./screenshots/favorite_screen.png]
+
+
 
 ## Features
 - *Character List* : Displays a list of characters from the show.
@@ -17,5 +19,14 @@ This is a simple android application that fetches and displays characters from t
 
 The application utilizes MVVM (Model-View-ViewModel) architecture.
 
+
 ## Libraries
+
+The app uses the following libraries:
+- **Kotlin** : The main language for Android development.
+- **Coroutines**: For asynchronous programming, ensuring smooth user experiences when fetching data from the API.
+- **Retrofit** : For making API requests to the Rick and Morty API.
+- **Hilt**: For Dependency Injection, promoting better testability and clean architecture.
+- **Room**: For local data storage, allowing users to save their favorite characters offline.
+
 
