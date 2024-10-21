@@ -100,6 +100,10 @@ dependencies {
     //instrumented tests
     //assertion library
     androidTestImplementation("com.google.truth:truth:1.4.4")
+    //live data
+    androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
+    //espresso
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
