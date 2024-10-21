@@ -87,6 +87,7 @@ dependencies {
     implementation("com.github.haroldadmin:NetworkResponseAdapter:4.0.1")
 
 
+
     //paging
     val paging_version = "2.1.2"
 
@@ -95,7 +96,6 @@ dependencies {
     testImplementation("androidx.paging:paging-common:$paging_version")
     // optional - RxJava support
     implementation("androidx.paging:paging-rxjava2:$paging_version")
-
 
     //instrumented tests
     //assertion library
