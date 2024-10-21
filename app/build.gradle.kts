@@ -97,10 +97,16 @@ dependencies {
     // optional - RxJava support
     implementation("androidx.paging:paging-rxjava2:$paging_version")
 
-    //tests
+    // Android tests
     androidTestImplementation("com.google.truth:truth:1.4.4")
     androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9")
+
+    //tests
+    testImplementation("com.google.truth:truth:1.4.4")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation("androidx.test.espresso:espresso-core:3.4.0")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9")
 
     implementation(libs.androidx.core.ktx)
