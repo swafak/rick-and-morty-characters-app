@@ -54,9 +54,6 @@ android {
 
 dependencies {
 
-    // Retrofit dependencies
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
 
     // Shimmer dependency
     implementation("com.facebook.shimmer:shimmer:0.5.0")
@@ -86,6 +83,9 @@ dependencies {
     // Network Response dependency
     implementation("com.github.haroldadmin:NetworkResponseAdapter:4.0.1")
 
+    //Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+
 
 
     //paging
@@ -97,13 +97,11 @@ dependencies {
     // optional - RxJava support
     implementation("androidx.paging:paging-rxjava2:$paging_version")
 
-    //instrumented tests
-    //assertion library
+    //tests
     androidTestImplementation("com.google.truth:truth:1.4.4")
-    //live data
     androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
-    //espresso
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
