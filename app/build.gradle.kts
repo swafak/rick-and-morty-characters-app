@@ -90,7 +90,6 @@ dependencies {
 
     //paging
     val paging_version = "2.1.2"
-
     implementation("androidx.paging:paging-runtime:$paging_version")
     // alternatively - without Android dependencies for testing
     testImplementation("androidx.paging:paging-common:$paging_version")
