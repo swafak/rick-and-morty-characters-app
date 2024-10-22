@@ -74,8 +74,6 @@ class CharactersDetailsFragment : Fragment() {
             })
 
         }
-
-
         // FavButton click listener
         binding.FavButton.setOnClickListener {
             details?.let { character ->

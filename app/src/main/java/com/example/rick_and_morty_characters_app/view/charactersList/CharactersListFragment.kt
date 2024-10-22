@@ -102,12 +102,12 @@ class CharactersListFragment : Fragment() {
             }
         }
     }
-        private fun showShimmerEffect() {
+    private fun showShimmerEffect() {
             binding.shimmerFrameLayout.startShimmer()
             binding.shimmerFrameLayout.visibility = View.VISIBLE
             binding.characterRecyclerView.visibility = View.GONE
         }
-        private fun hideShimmerEffect() {
+    private fun hideShimmerEffect() {
             binding.shimmerFrameLayout.stopShimmer()
             binding.shimmerFrameLayout.visibility = View.GONE
             binding.characterRecyclerView.visibility = View.VISIBLE

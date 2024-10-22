@@ -18,8 +18,6 @@ interface CharacterDao {
     @Query("DELETE FROM FavCharacters WHERE id = :id")
     suspend fun deleteFavoriteById(id: Int)
 
-
-
     @Query("SELECT * FROM FavCharacters WHERE id = :id LIMIT 1")
     suspend fun isFavorite(id: Int): CharacterEntity?
 }

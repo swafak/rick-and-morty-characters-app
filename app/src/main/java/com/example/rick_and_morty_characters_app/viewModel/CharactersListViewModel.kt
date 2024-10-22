@@ -55,5 +55,5 @@ fun fetchCharacters() {
 sealed class CharacterListViewState {
     object Loading : CharacterListViewState()
     object Success : CharacterListViewState()
-    data class Error(val exception: Throwable) : CharacterListViewState() // Error expects an exception parameter
+    data class Error(val exception: Throwable) : CharacterListViewState()
 }

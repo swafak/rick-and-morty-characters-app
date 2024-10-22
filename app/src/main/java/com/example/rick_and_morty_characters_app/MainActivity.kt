@@ -18,8 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Inflate the layout using View Binding
-        binding = ActivityMainBinding.inflate(layoutInflater)
+         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         // Configure top-level destinations
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_Favorite// IDs from your navigation graph
+                R.id.navigation_home, R.id.navigation_Favorite
             )
         )
 
